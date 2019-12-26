@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".model.RegistrationActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:src="@drawable/verifylogo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:textStyle="bold"
+            android:paddingBottom="15dp"
+            android:textAlignment="center"
+            android:paddingTop="30dp"
+            android:textAllCaps="true"
+            android:text="Verify Your Number"
+            android:textColor="#353535"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#656565"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/infoCen"
+            android:text="@string/verifyInfo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerCountries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:theme="@style/spinnerTheme"
+                android:textColorHint="@android:color/black"/>
+
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:hint=" Phone number"
+                android:layout_weight="1"
+                android:textColor="#353535"
+                android:maxLength="10"
+                android:textSize="16dp"
+                android:textColorHint="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonContinue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/defaultbtn"
+                android:text="Send Verification"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I'd do it later"
+                android:id="@+id/skipBtn"
+                android:textAllCaps="true"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/nav_color_text"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:background="@drawable/review_opt_btn"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
