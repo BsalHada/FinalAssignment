@@ -1,16 +1,14 @@
 package com.example.finalassignment.model;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.finalassignment.R;
 import android.os.Bundle;
 
-import com.example.finalassignment.R;
-
-public class DashboardActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_registration);
     }
 }
