@@ -1,7 +1,5 @@
 package com.example.finalassignment.adapter;
 
-//public class DayAdapter {
-//}
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,18 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalassignment.R;
-import com.example.finalassignment.modal.EventModal;
+import com.example.finalassignment.modal.RoutineModal;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class DayAdapter extends RecyclerView.Adapter<DayAdapter.MyViewHolder>{
 
     Context context;
-    List<EventModal> EventModals;
+    List<RoutineModal> RoutineModals;
 
-    public DayAdapter(Context context, List<EventModal> EventModals) {
+    public DayAdapter(Context context, List<RoutineModal> RoutineModals) {
         this.context = context;
-        this.EventModals = EventModals;
+        this.RoutineModals = RoutineModals;
     }
 
     @NonNull
@@ -38,20 +36,23 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         //// getting data according to position
-        final EventModal EventModal = EventModals.get(position);
+        final RoutineModal RoutineModal = RoutineModals.get(position);
 
-        holder.txt_course_name.setText(EventModal.getEvent_name());
-        holder.txt_course_code.setText(EventModal.getEvent_desc());
+        holder.txt_course_name.setText(RoutineModal.getCourse_name());
+        holder.txt_course_code.setText(RoutineModal.getCourse_code());
+        holder.txt_time.setText(RoutineModal.getTime());
+        holder.txt_batch.setText(RoutineModal.getBatch());
+        holder.txt_room_no.setText(RoutineModal.getRoom_no());
     }
 
     @Override
     public int getItemCount() {
-        return EventModals.size();
+        return RoutineModals.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView txt_course_name,txt_course_code, txt_time, txt_batch;
+        TextView txt_course_name,txt_course_code, txt_time, txt_batch, txt_room_no;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -60,6 +61,7 @@ public class DayAdapter extends RecyclerView.Adapter<DayAdapter.MyViewHolder>{
             txt_course_code = itemView.findViewById(R.id.coursecode);
             txt_time = itemView.findViewById(R.id.time);
             txt_batch =itemView.findViewById(R.id.batch);
+            txt_room_no=itemView.findViewById(R.id.room_no);
         }
     }
 }

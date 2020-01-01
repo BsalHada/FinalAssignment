@@ -12,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.finalassignment.R;
-import com.example.finalassignment.adapter.EventAdapter;
+import com.example.finalassignment.adapter.DayAdapter;
 import com.example.finalassignment.api_classes.BaseAPI;
 import com.example.finalassignment.api_classes.Interface;
-import com.example.finalassignment.modal.EventModal;
+import com.example.finalassignment.modal.RoutineModal;
 
 import java.util.List;
 
@@ -48,23 +48,21 @@ public class MondayFragment extends Fragment {
 
     public void routine_monday(){
         Interface retrofitInterface = BaseAPI.getRetrofit().create(Interface.class);
-        Call<List<EventModal>> productModalCall = retrofitInterface.parseEvent();
-        productModalCall.enqueue(new Callback<List<EventModal>>() {
+        Call<List<RoutineModal>> productModalCall = retrofitInterface.parseRoutine();
+        productModalCall.enqueue(new Callback<List<RoutineModal>>() {
             @Override
-            public void onResponse(Call<List<EventModal>> call, Response<List<EventModal>> response) {
-                System.out.println("Collection list " + response.body());
-                EventAdapter EventAdapter = new EventAdapter(getActivity(),response.body());
-                // elevation design
+            public void onResponse(Call<List<RoutineModal>> call, Response<List<RoutineModal>> response) {
+                DayAdapter DayAdapter = new DayAdapter(getActivity(),response.body());
                 LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(getActivity(),
                         LinearLayoutManager.HORIZONTAL, false);
                 recyclerView_monday.setLayoutManager(horizontalLayoutManager);
                 recyclerView_monday.setHasFixedSize(true);
-                recyclerView_monday.setAdapter(EventAdapter);
-                EventAdapter.notifyDataSetChanged();
+                recyclerView_monday.setAdapter(DayAdapter);
+                DayAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<EventModal>> call, Throwable t) {
+            public void onFailure(Call<List<RoutineModal>> call, Throwable t) {
 
             }
         });

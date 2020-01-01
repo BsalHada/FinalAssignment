@@ -3,6 +3,7 @@ package com.example.finalassignment.modal;
 public class RoutineModal {
     private String class_name;
     private String course_name;
+    private String course_code;
     private String time;
     private String room_no;
     private String batch;
@@ -54,5 +55,13 @@ public class RoutineModal {
 
     public void setTecher_name(String techer_name) {
         this.techer_name = techer_name;
+    }
+
+    public String getCourse_code() {
+        return course_code;
+    }
+
+    public void setCourse_code(String course_code) {
+        this.course_code = course_code;
     }
 }
