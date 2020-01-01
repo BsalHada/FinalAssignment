@@ -28,6 +28,7 @@ import retrofit2.Response;
  */
 public class MondayFragment extends Fragment {
 
+    private static String day = "Monday";
 
     public MondayFragment() {
         // Required empty public constructor
