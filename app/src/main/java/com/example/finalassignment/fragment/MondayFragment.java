@@ -4,12 +4,24 @@ package com.example.finalassignment.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.finalassignment.R;
+import com.example.finalassignment.adapter.EventAdapter;
+import com.example.finalassignment.api_classes.BaseAPI;
+import com.example.finalassignment.api_classes.Interface;
+import com.example.finalassignment.modal.EventModal;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,13 +33,41 @@ public class MondayFragment extends Fragment {
         // Required empty public constructor
     }
 
+    RecyclerView recyclerView_monday;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_monday, container, false);
+        recyclerView_monday = view.findViewById(R.id.recyclerView_Monday);
+        routine_monday();
         return view;
+    }
+
+    public void routine_monday(){
+        Interface retrofitInterface = BaseAPI.getRetrofit().create(Interface.class);
+        Call<List<EventModal>> productModalCall = retrofitInterface.parseEvent();
+        productModalCall.enqueue(new Callback<List<EventModal>>() {
+            @Override
+            public void onResponse(Call<List<EventModal>> call, Response<List<EventModal>> response) {
+                System.out.println("Collection list " + response.body());
+                EventAdapter EventAdapter = new EventAdapter(getActivity(),response.body());
+                // elevation design
+                LinearLayoutManager horizontalLayoutManager = new LinearLayoutManager(getActivity(),
+                        LinearLayoutManager.HORIZONTAL, false);
+                recyclerView_monday.setLayoutManager(horizontalLayoutManager);
+                recyclerView_monday.setHasFixedSize(true);
+                recyclerView_monday.setAdapter(EventAdapter);
+                EventAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<EventModal>> call, Throwable t) {
+
+            }
+        });
     }
 
 }
