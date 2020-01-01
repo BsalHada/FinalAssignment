@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!-- <uses-library -->
+        <activity android:name=".activity.EventActivity"></activity>
+        <activity android:name=".activity.LandingActivity"></activity> <!-- <uses-library -->
         <!-- android:name="com.google.android.wearable" -->
         <!-- android:required="false" /> -->
         <!--
@@ -21,25 +21,18 @@
         <!-- android:name="com.google.android.wearable.standalone" -->
         <!-- android:value="false" /> -->
         <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.DashboardActivity" >
-
-        </activity>
-        <activity android:name=".activity.RegistrationActivity" >
-
-        </activity>
-        <activity android:name=".activity.RoutineActivity">
+        <activity android:name=".activity.DashboardActivity" />
+        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.RoutineActivity"></activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".activity.SplashActivity">
-
-        </activity>
-
     </application>
 
 </manifest>
