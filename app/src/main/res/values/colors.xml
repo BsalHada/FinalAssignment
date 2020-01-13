@@ -7,4 +7,8 @@
     <color name="nav_color_text">#DD444343</color>
     <color name="black">#000000</color>
     <color name="lightPurple">#774aeb</color>
+    <color name="cardColor">#ffffff</color>
+    <color name="textcardColor">#3f3f3f</color>
+    <color name="lightBlue">#6DD5FA</color>
+    <color name="lightYellow">#FBD786</color>
 </resources>
