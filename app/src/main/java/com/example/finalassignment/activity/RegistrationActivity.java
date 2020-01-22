@@ -1,4 +1,4 @@
-package com.example.finalassignment.model;
+package com.example.finalassignment.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalassignment.R;
