@@ -117,6 +117,7 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/proximanovaregular"
                         android:text="Bishal Hada"
+                        android:id="@+id/txtName"
                         android:textColor="#424242"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -185,9 +186,10 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="218dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
                             android:paddingRight="8dp">
 
                             <ImageView
@@ -195,14 +197,15 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/circular_grey_bordersolid"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_call_24dp" />
+                                android:src="@drawable/ic_email_24dp" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:text="+977 9861717727"
+                                android:text="suryabinayek, Bhaktapur"
+                                android:id="@+id/txtaddress"
                                 android:textColor="@color/goodgrey"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -227,6 +230,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:textColor="@color/goodgrey"
                                 android:text="bishalhada@gmail.com"
+                                android:id="@+id/txtEmail"
                                 android:textSize="15sp"
                                 android:fontFamily="@font/proximanovaregular" />
                         </LinearLayout>
@@ -236,6 +240,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
+                            android:visibility="gone"
                             android:paddingRight="8dp">
 
                             <ImageView
