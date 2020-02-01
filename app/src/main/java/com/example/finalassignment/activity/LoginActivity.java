@@ -59,7 +59,7 @@ Button signin;
         StrictModeClass.StrictMode();
         if (LoginBllClass.checkuser(email, password)) {
             // Intent intent = new Intent(LoginActivity.this, LandingActivity.class);
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(intent);
             finish();
         } else {
