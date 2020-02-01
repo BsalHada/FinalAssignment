@@ -1,5 +1,6 @@
 package com.example.finalassignment.api_classes;
 
+import com.example.finalassignment.SignUpResponse;
 import com.example.finalassignment.modal.EventModal;
 import com.example.finalassignment.modal.RoutineModal;
 import com.example.finalassignment.modal.UserModal;
@@ -29,9 +30,9 @@ public interface Interface {
     Call<Void> registerEmployee(@Body UserModal usersCUD);
 
     //for logging into the system
-//    @FormUrlEncoded
-//    @POST("register/login_user")
-//    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
+    @FormUrlEncoded
+    @POST("register/login_user")
+    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
 
 //    @GET("register/me")
 //    Call<Users> getUserDetails(@Header("Authorization")String token);

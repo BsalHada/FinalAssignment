@@ -9,13 +9,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.finalassignment.LoginBllClass;
+import com.example.finalassignment.MainActivity;
 import com.example.finalassignment.R;
+import com.example.finalassignment.StrictModeClass;
 
 public class LoginActivity extends AppCompatActivity {
 Button btnreg;
 
-EditText email,password;
+EditText emails,passwords;
 ImageButton back;
 Button signin;
     @Override
@@ -25,13 +29,16 @@ Button signin;
         btnreg= findViewById(R.id.signin);
         back= findViewById(R.id.ic_back);
         signin=findViewById(R.id.signin);
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
+
+        emails=findViewById(R.id.email);
+        passwords=findViewById(R.id.password);
+
         btnreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(), RegistrationActivity.class);
-                startActivity(intent);
+                login();
+//                Intent intent= new Intent(getApplicationContext(), RegistrationActivity.class);
+//                startActivity(intent);
             }
         });
 
@@ -44,4 +51,23 @@ Button signin;
             }
         });
     }
+
+    private void login() {
+        String email = emails.getText().toString();
+        String password = passwords.getText().toString();
+        LoginBllClass LoginBllClass = new LoginBllClass();
+        StrictModeClass.StrictMode();
+        if (LoginBllClass.checkuser(email, password)) {
+            // Intent intent = new Intent(LoginActivity.this, LandingActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
+            emails.requestFocus();
+        }
+
+
+    }
+
 }
