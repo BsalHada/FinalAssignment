@@ -29,10 +29,10 @@ public interface Interface {
     Call<Void> registerEmployee(@Body UserModal usersCUD);
 
     //for logging into the system
-    @FormUrlEncoded
-    @POST("register/login_user")
-    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
+//    @FormUrlEncoded
+//    @POST("register/login_user")
+//    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
 
-    @GET("register/me")
-    Call<Users> getUserDetails(@Header("Authorization")String token);
+//    @GET("register/me")
+//    Call<Users> getUserDetails(@Header("Authorization")String token);
 }
